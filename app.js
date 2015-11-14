@@ -16,6 +16,8 @@ var app = express();
 var io           = socket_io();
 app.io           = io;
 
+var sockets = require('./lib/sockets')(io);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
