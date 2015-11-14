@@ -6,10 +6,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var subdomainCheck = require('./lib/middlewares/subdomain-checker');
+var socket_io    = require( "socket.io" );
 
 var routes = require('./routes/index');
 
 var app = express();
+
+// Socket.io
+var io           = socket_io();
+app.io           = io;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
