@@ -34,3 +34,6 @@ npm-debug.log
 
 # Default config file
 config/default.json
+
+# Bower Components
+public/bower_components
