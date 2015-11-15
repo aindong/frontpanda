@@ -1,0 +1,25 @@
+{
+  "name": "frontpanda",
+  "version": "0.0.0",
+  "homepage": "https://github.com/aindong/frontpanda",
+  "authors": [
+    "Alleo Indong <freedom_war550@live.com.ph>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.6"
+  }
+}

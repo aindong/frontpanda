@@ -7,8 +7,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var subdomainCheck = require('./lib/middlewares/subdomain-checker');
 var socket_io    = require( "socket.io" );
-
-var routes = require('./routes/index');
+var fs = require('fs');
 
 var app = express();
 
@@ -43,7 +42,12 @@ app.use(session(sessionOptions));
 // Subdomain check
 app.use(subdomainCheck);
 
-app.use('/', routes);
+// Routes
+var routePath = './routes/';
+fs.readdirSync(routePath).forEach(function(file) {
+    var route = routePath + file;
+    require(route)(app);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

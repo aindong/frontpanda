@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+module.exports = function(app) {
+    app.get('/',function(req, res) {
+        if (! req.tenant) {
+            res.render('index', { title: 'Express', tenant: req.tenant });
+            return false;
+        }
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', tenant: req.tenant });
-});
-
-module.exports = router;
+        res.render('tenant/index', { title: 'Express', tenant: req.tenant });
+    });
+};
